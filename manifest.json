@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+    "name": " Lyrical",
+    "version": "1.0",
+    "description": "Display lyrics for YouTube music videos",
+    "permissions": [
+      "tabs",
+      "http://*/*",
+      "https://*/*"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [{
+      "matches": ["https://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }],
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
+  }
